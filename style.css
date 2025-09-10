@@ -1,0 +1,290 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+/* Sticky Header with White Background */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  box-sizing: border-box;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* subtle shadow */
+}
+
+header nav a {
+  color: black;
+}
+
+header .material-symbols-outlined {
+  color: black;
+}
+
+.logo svg {
+  height: 25px;
+  width: 120px;
+  fill: black; /* ensure the Tesla logo is visible */
+}
+
+
+/* Navbar */
+nav {
+  flex: 1;
+  text-align: center;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 2px 6px; /* <-- moved here so it's always applied */
+  border-radius: 9999px; 
+  transition: background-color 0.3s ease; 
+}
+
+nav a:hover {
+  background-color: aqua;
+}
+
+
+/* Icons */
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  white-space: nowrap;
+}
+
+.material-symbols-outlined {
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hero Section */
+.hero {
+  background: url("./Assets/Tesla home page img.jpeg") no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;  /* content starts from top instead of exact middle */
+  text-align: center;
+  padding-top: 140px; /* space under header, adjust to taste */
+}
+
+.hero-content {
+  background: rgba(0, 0, 0, 0.4); 
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hero p a {
+  color: white;               /* keep it visible on dark background */
+  text-decoration: underline; /* force underline */
+  font-weight: bold;
+}
+
+.hero p a:visited {
+  color: white;               /* prevent purple after visiting */
+}
+
+
+.buttons button {
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  background: blue;
+  color: white;
+  font-weight: bold;
+}
+
+
+/* Cards Section */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 60px 20px;
+  background-color: #f5f5f5;
+  flex-wrap: wrap; /* wraps to next line on smaller screens */
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  width: 250px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.card h2 {
+  font-size: 26px;   
+  font-weight: bold;
+  margin: 10px 0;
+  color: #111;       
+}
+
+.card h4 {
+  font-size: 16px;
+  font-weight: normal;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.card h4 a {
+  color: inherit;            /* same color as h4 */
+  text-decoration: underline; /* always underlined */
+}
+
+.card h4 a:visited {
+  color: inherit;            /* prevents purple visited links */
+}
+
+.card h4 a:hover {
+  color: #000;               /* optional: make it darker on hover */
+}
+
+
+.card .buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.card button {
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px 10px;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.card button:first-child {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+}
+
+.card button:last-child {
+  background-color: black;
+  color: white;
+}
+
+.card button:first-child:hover {
+  background-color: #f2f2f2;
+}
+
+.card button:last-child:hover {
+  background-color: #333;
+}
+
+a.btn-link {
+  text-decoration: none; /* removes underline */
+  color: inherit;        /* keeps the text color same as button */
+  display: inline-block; /* ensures it behaves like a button */
+}
+
+a.btn-link:visited {
+  color: inherit;        /* prevents purple on visited links */
+}
+
+a.btn-link:hover {
+  text-decoration: none; /* optional: no underline on hover */
+}
+
+
+/* Footer */
+footer {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+footer a {
+  color: #ccc;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Header */
+@media (max-width: 1024px) {
+  nav {
+    display: none; /* hides nav links on tablet/smaller screens */
+  }
+
+  header {
+    padding: 15px 20px; /* reduce header padding */
+  }
+}
+
+/* Responsive Hero Section */
+@media (max-width: 768px) {
+  .hero-content {
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem; /* smaller headline on mobile */
+  }
+
+  .buttons button {
+    font-size: 14px;
+    padding: 8px 16px; /* smaller buttons on mobile */
+  }
+}
+
+/* Responsive Cards Section */
+@media (max-width: 768px) {
+  .cards {
+    flex-direction: column; /* stack cards vertically */
+    align-items: center;
+    padding: 40px 10px;
+  }
+
+  .card {
+    width: 90%; /* card width adapts */
+    max-width: 400px;
+    margin-bottom: 20px;
+  }
+}
